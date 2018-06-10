@@ -129,11 +129,6 @@ function initGraphics() {
     });
     ambianceSound.volume = 0.125;
 
-    //add random button to stage
-//    randomButton.x = randomButtonPressed.x = 400;
-//    randomButton.y = randomButtonPressed.y = 405;
-//    randomButtonPressed.cursor = "pointer";
-//    stage.addChild(randomButton);
 
      //add dice picture to stage
     dice.x = dicePressed.x = 500;
@@ -379,15 +374,6 @@ function initMuteUnMuteButtons() {
 function initListeners() {
 
 
-    randomButton.on("mouseover", function () {
-        stage.addChild(randomButtonPressed);
-        stage.removeChild(randomButton);
-    });
-    randomButtonPressed.on("mouseout", function () {
-        stage.addChild(randomButton);
-        stage.removeChild(randomButtonPressed);
-    });
-    randomButtonPressed.on("click", random);
 
     dice.on("mouseover", function () {
         stage.addChild(dicePressed);
@@ -441,7 +427,6 @@ function RandomMass(min, max) {
 // bitmap variables
 var muteButton, unmuteButton;
 var background;
-var randomButton, randomButtonPressed;
 var circle;
 var ferrisWheelStand;
 var passenger;
@@ -477,16 +462,6 @@ function setupManifest() {
             src: "images/unmute.png",
             id: "unmute"
     },
-        {
-            src: "images/random_btn_pressed.png",
-            id: "randomButtonPressed"
-
-    },
-        {
-            src: "images/random_btn.png",
-            id: "randomButton"
-
-        },
         {
             src: "images/dice.png",
             id: "dice"
@@ -534,10 +509,6 @@ function handleFileLoad(event) {
         unmuteButton = new createjs.Bitmap(event.result);
     } else if (event.item.id == "background") {
         background = new createjs.Bitmap(event.result);
-    } else if (event.item.id == "randomButton") {
-        randomButton = new createjs.Bitmap(event.result);
-    } else if (event.item.id == "randomButtonPressed") {
-        randomButtonPressed = new createjs.Bitmap(event.result);
     } else if (event.item.id == "dice") {
         dice = new createjs.Bitmap(event.result)
     }else if (event.item.id == "dicePressed") {
