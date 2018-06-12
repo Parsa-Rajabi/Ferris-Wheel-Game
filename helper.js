@@ -23,6 +23,7 @@ function toggleMute() {
 		stage.addChild(unmuteButton);
 		stage.removeChild(muteButton);
 		ambianceSound = createjs.Sound.play("song", {loop:-1});
+        ambianceSound.volume = 0.125;
 	}
 }
 
